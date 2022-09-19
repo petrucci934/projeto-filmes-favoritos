@@ -1,0 +1,170 @@
+/* main * {
+    border: 1px solid red;
+    
+} */
+/* RESETANDO O CSS */
+/*PASSO 1 */
+*{
+     margin: 0; /* Retira todas as margens  */
+     padding: 0; /*Retira todos os paddings*/
+     box-sizing: border-box; /*Altera o tamanho das, se adequando e mantendo o tamanho da caixa(se houver uma cixa com 500px e for colocado um padding de 40, ele não será somado ao width existente se mantendo com 500px e não com 540px que seria a soma dos dois) */
+   
+}
+/*PASSO 2 */
+body{
+    background-image:url(./assets/bg.jpg); /* Aplica imagem ao background */
+    background-position: top center;
+    background-size: 100% auto;   /*100% do deu tamaho na horizontal e auto de cima  pra baixo */
+    background-repeat: no-repeat; /* elimina a repetição do background */
+    background-color: #121214; /* Cor RGB*/
+}
+/*PASSO 3 */
+main{
+    max-width: 580px; /* Tamanho maximo  */
+    width: 90%; /* Quando a tela for menor que 580px, ela será de 90% do tamanho da tela  */
+    margin: auto; /* Ao colocar automático ele faz o cálculo para as margens, deixando espaços em ambos os lados */
+  
+}
+/*PASSO 4 */
+ul{
+    list-style-type: none;  /*Retira os pontos da lista ordenada */
+}
+
+/*PASSO 5 */
+
+body * {
+    font-family: inter, sans-serif; /*Font extraída no google fonts*/
+    line-height: 160%; /*Altura da linha*/
+}
+/*PASSO 6 */
+
+section{    
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%); /*Cor de fundo da section*/
+    padding-top: 4px;
+    border-radius: 10px;
+}
+/* PASSO 08*/
+/*Estilizando a sections*/
+section div{
+    background-color:#2A2634;
+    padding:24px 32px 32px;
+    border-radius: 8px;
+    /* padding-top:24px ; */
+}
+
+section h2{  
+    letter-spacing: -0.47px;
+    
+}
+section p{    
+    letter-spacing: -0.18px;
+    color: #A1A1AA;
+    text-align: center;
+}
+section img{
+    width: 140px;
+    border-radius: 8px; 
+
+}
+section ul{
+    margin-top: 24px;
+    display:flex ;             /* As divs são display em bloco.Ficam uma abaixo da outra bloqueando a linha inteira*/
+    gap: 16px; 
+    flex-wrap: wrap;
+}
+
+/* PASSO 07*/
+
+/*CSS DISPLAY*/
+
+
+li{
+    width: 145px;
+}
+main{
+    display:grid ;    /*Não altera a disposição dos elementos permanecendo em bloco. Desbloqueia o gap*/
+    gap: 24px;
+    margin: 32px auto;  
+}
+/*PASSO 09*/
+
+/* HEADER */
+
+header img{
+    width:150px;
+    border-radius: 50%;
+    margin-top: 32px;
+    padding: 4px;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+    
+}
+header{
+    text-align: center;
+    margin: 32px auto;
+    color:#FFFFFF;
+}
+header div img{  
+    margin: auto;
+    transition: transform .3s; /*Suavizando a transição com .3s*/
+
+}
+/* PASSO 10 */
+
+/*  TRANSITION */
+
+
+header div img:hover{  /*Criando movimento às imagens com transition e tranforms*/
+transform: scale(1.1); /*Aumenta a imagem em 10%*/
+}
+section ul li:hover{
+    transform: scale(1.1);
+}
+
+section ul li{
+    transition: transform .3s;
+}
+
+/*PASSO 11*/
+
+/*CSS ANIMATION*/
+header div{
+animation: fromtop .7s .2s backwards; /*Adicionado delay de 1s na mesma linha*/
+/* backwards */
+}
+@keyframes fromtop{
+    from{
+        opacity: 0; /*Começa escuro e vao até 100%*/
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0); /*Move os elemento na posição y(de cima pra baixo)*/
+    }
+}
+main section{
+    animation: fromBottom .7s  backwards; /*Adicionado delay de 1s na mesma linha*/
+/* backwards */
+}
+@keyframes fromBottom{
+    from{
+        opacity: 0; /*Começa escuro e vao até 100%*/
+        transform: translateY(-30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0); /*Move os elemento na posição y(de cima pra baixo)*/
+    }
+}
+main section:nth-child(1){ /*Pegando o filho número 1 da section*/
+animation-delay:0;
+
+}
+main section:nth-child(2){ /*Pegando o filho número 2 da section*/
+animation-delay:  .4s;
+
+}
+main section:nth-child(3){ /*Pegando o filho número 3 da section*/
+    animation-delay:.8s ;
+   
+}
